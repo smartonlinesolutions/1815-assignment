@@ -9,7 +9,27 @@ backend default {
     .between_bytes_timeout = 30s;
 }
 
+# Only allow PURGE from the local Docker network.
+# Tighten this ACL for deployments beyond local development.
+acl purge {
+    "localhost";
+    "127.0.0.1";
+    "172.16.0.0"/12;
+    "192.168.0.0"/16;
+    "10.0.0.0"/8;
+}
+
 sub vcl_recv {
+    # Handle cache invalidation before normal GET/HEAD filtering.
+    if (req.method == "PURGE") {
+        if (client.ip !~ purge) {
+            return (synth(405, "PURGE not allowed"));
+        }
+
+        # Purge the object matching this request's cache key.
+        return (purge);
+    }
+
     # Only cache safe, read-only requests.
     if (req.method != "GET" && req.method != "HEAD") {
         return (pass);
@@ -64,8 +84,7 @@ sub vcl_backend_response {
         return (deliver);
     }
 
-    # Respect origin cache-control directives, including
-    # private, no-store and no-cache.
+    # Respect origin cache-control directives.
     if (beresp.http.Cache-Control ~ "(?i)(private|no-store|no-cache)") {
         set beresp.uncacheable = true;
         set beresp.ttl = 0s;
@@ -84,7 +103,6 @@ sub vcl_deliver {
         set resp.http.X-Cache = "MISS";
     }
 
-    # Remove internal diagnostics from the response.
     unset resp.http.X-Varnish;
     unset resp.http.Via;
 }
