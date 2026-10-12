@@ -1,0 +1,6 @@
+#!/bin/sh
+# Create random demo articles (runs app/scripts/seed-articles.php inside the php container).
+#   ./bin/seed              20 articles, about 30% premium
+#   ./bin/seed 50 60        50 articles, about 60% premium
+#   ./bin/seed clean        delete the articles this script created
+exec docker compose exec --user app php wp --path=web/wp --user=1 eval-file scripts/seed-articles.php "$@"
