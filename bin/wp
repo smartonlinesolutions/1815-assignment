@@ -1,0 +1,3 @@
+#!/bin/sh
+# Run WP-CLI inside the php container as the app user (keeps file ownership correct).
+exec docker compose exec --user app php wp --path=web/wp "$@"

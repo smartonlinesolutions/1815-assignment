@@ -1,0 +1,3 @@
+#!/bin/sh
+# Run Composer inside the php container as the app user.
+exec docker compose exec --user app php composer "$@"

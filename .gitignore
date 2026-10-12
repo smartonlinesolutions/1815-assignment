@@ -1,0 +1,51 @@
+# ---------------------------------------------------------------
+# Secrets and local overrides
+# ---------------------------------------------------------------
+.env
+.env.*
+!.env.example
+docker-compose.override.yml
+
+# ---------------------------------------------------------------
+# WordPress / Composer project in ./app (Bedrock layout)
+# Generated or downloaded on first run, so it does not belong in git.
+# (app/.gitignore from Bedrock covers most of this too; this is a safety net.)
+# ---------------------------------------------------------------
+/app/vendor/
+/app/web/wp/
+/app/var/
+/app/.env
+/app/.env.*
+!/app/.env.example
+/app/web/app/uploads/
+/app/web/app/upgrade/
+/app/web/app/cache/
+/app/web/app/object-cache.php
+
+# Plugins and themes installed by Composer (wpackagist). Uncomment if you use it,
+# and keep your own plugins by un-ignoring them, e.g. !/app/web/app/plugins/havenpost-cache/
+# /app/web/app/plugins/*/
+# /app/web/app/mu-plugins/*/
+# /app/web/app/themes/twenty*/
+
+# Keep: app/composer.json, app/composer.lock, app/config/, app/src/,
+#       app/web/app/mu-plugins/havenpost-bootstrap.php
+
+# ---------------------------------------------------------------
+# Logs, caches, backups
+# ---------------------------------------------------------------
+*.log
+*.sql
+*.sql.gz
+*.zip
+
+# ---------------------------------------------------------------
+# Editors and operating systems
+# ---------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
