@@ -1,0 +1,40 @@
+/*
+Theme Name: Havenpost
+Description: Child theme of Twenty Twenty-Five for Havenpost: article page, category page and premium articles.
+Template: twentytwentyfive
+Version: 1.0.0
+Requires at least: 6.7
+Requires PHP: 8.3
+Text Domain: havenpost
+*/
+
+/* Intro (excerpt) shown above the article body. */
+.havenpost-intro {
+	font-weight: 600;
+}
+
+/* "Premium" badge after the title (added by PremiumGate). */
+.havenpost-badge {
+	display: inline-block;
+	margin-inline-start: 0.5em;
+	padding: 0.1em 0.6em;
+	border: 1px solid currentColor;
+	border-radius: 999px;
+	font-size: 0.45em;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	vertical-align: middle;
+}
+
+/* Notice that replaces the body for anonymous visitors. */
+.havenpost-paywall {
+	margin-block: var(--wp--preset--spacing--50, 2rem);
+	padding: var(--wp--preset--spacing--40, 1.5rem);
+	border: 1px solid currentColor;
+	border-radius: 4px;
+}
+
+.havenpost-paywall p:last-child {
+	margin-bottom: 0;
+}

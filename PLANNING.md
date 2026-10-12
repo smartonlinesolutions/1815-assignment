@@ -9,7 +9,7 @@ Part 2: Build
 
 
 Prioritering deel 2 (Musts):
-8) The whole stack starts with a single command, such as docker compose up or wp-env start. 
+8) The whole stack starts with a single command, such as docker compose up or wp-env start. CHECK
 1) A theme or plugin with an article page and a category page listing the 20 latest articles. On premium articles, anonymous visitors only see the intro; subscribers see everything.
 3) At least two cache layers: an HTTP cache (reverse proxy) and WordPress's object cache with a persistent backend, such as Memcached with our wp-memcached drop-in. Invalidation is targeted: no flushing everything.
 4) Invalidation handles at least publishing, updating, unpublishing, deleting, slug changes and category changes.

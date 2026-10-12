@@ -35,6 +35,9 @@ services:
       WP_ADMIN_USER: ${WP_ADMIN_USER:-admin}
       WP_ADMIN_PASSWORD: ${WP_ADMIN_PASSWORD:-admin}
       WP_ADMIN_EMAIL: ${WP_ADMIN_EMAIL:-admin@example.com}
+      HAVENPOST_SUBSCRIPTION_COOKIE: havenpost_token
+      HAVENPOST_DEV_SUBSCRIBER_TOKEN: dev-subscriber   # only honoured when WP_ENV is development/local
+      HAVENPOST_SUBSCRIPTION_API_URL: ""               # real validation endpoint, see SubscriptionChecker
     depends_on:
       db:
         condition: service_healthy
