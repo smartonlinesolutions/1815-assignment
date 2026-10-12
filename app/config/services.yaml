@@ -1,5 +1,3 @@
-# Loaded by achttienvijftien/service-container.
-# Also supported: config/bundles.php, config/parameters/<env>.yaml, config/packages/*.yaml
 services:
   _defaults:
     autowire: true
@@ -8,6 +6,9 @@ services:
   Havenpost\:
     resource: '../src/'
 
-  # Services are private by default; the demo is public so the mu-plugin can fetch it.
+  # Services are private by default; these are fetched by the mu-plugin.
   Havenpost\Hello\HelloService:
+    public: true
+
+  Havenpost\Article\PremiumGate:
     public: true
