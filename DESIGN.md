@@ -21,6 +21,8 @@ Hier heb ik geen antwoord op, aangezien ik hier geen ervaring mee heb.
 In mijn PLANNING.md document had ik reeds een prioriteiten lijst gemaakt voor de Musts. Daarvan heb ik de eerste 4 punten ook op kunnen pakken. Het punt om te werken met de services in de container heb ik tijdens de ontwikkeling naar voren gehaald. 
 Bewust heb ik de geautomatiseerde tests als laatste opgenomen in de planning (en dus ook niet opgepakt nu), daar dit los staat van de functionaliteit van de website. Punten 5 en 6 heb ik nog niet op kunnen pakken, maar dat zouden mijn eerstvolgende punten zijn om op te pakken als ik meer tijd zou hebben.
 
+Uiteindelijk ben ik 4,5 uur bezig geweest en ten opzichte van mijn planing ben ik langer bezig geweest met het uitvoeren van deel 2 (3,5 uur t.o.v. 2,75 uur in mijn planning) en heb ik iets minder tijd besteed aan hetinvullen van dit DESIGN document (15 minuten t.o.v. 25 minuten in mijn planning). 
+
 6) Time spent. How long each part took you.
 - 45 minuten: Part 1: code Review
 - 15 minuten: Docker installeren en configureren
