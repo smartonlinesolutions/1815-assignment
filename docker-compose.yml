@@ -39,6 +39,8 @@ services:
       HAVENPOST_DEV_SUBSCRIBER_TOKEN: dev-subscriber   # only honoured when WP_ENV is development/local
       HAVENPOST_SUBSCRIPTION_API_URL: ""               # real validation endpoint, see SubscriptionChecker
     depends_on:
+      memcached:
+        condition: service_started
       db:
         condition: service_healthy
     expose:
@@ -64,6 +66,11 @@ services:
       VARNISH_SIZE: 256M
     depends_on:
       - nginx
+
+  memcached:
+    image: memcached:1.6-alpine
+    command: ["memcached", "-m", "64", "-o", "modern"]
+    restart: unless-stopped
 
   db:
     image: mariadb:11.4

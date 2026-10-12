@@ -186,3 +186,16 @@ Config::apply();
 if (!defined('ABSPATH')) {
     define('ABSPATH', $webroot_dir . '/wp/');
 }
+
+/**
+ * Memcached object cache.
+ */
+if (!defined('WP_CACHE_KEY_SALT')) {
+    define('WP_CACHE_KEY_SALT', '1815-assignment-local');
+}
+
+$memcached_servers = [
+    'default' => [
+        'memcached:11211',
+    ],
+];

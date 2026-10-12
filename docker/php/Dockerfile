@@ -9,7 +9,7 @@ COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 RUN apt-get update \
  && apt-get install -y --no-install-recommends git unzip curl gosu default-mysql-client \
  && rm -rf /var/lib/apt/lists/* \
- && install-php-extensions mysqli pdo_mysql opcache intl zip gd exif bcmath
+ && install-php-extensions mysqli pdo_mysql opcache intl zip gd exif bcmath memcached
 
 # WP-CLI
 RUN curl -fsSL https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -o /usr/local/bin/wp \
