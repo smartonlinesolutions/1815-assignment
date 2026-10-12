@@ -20,11 +20,3 @@ Later:
 2) Your own logic runs as services in the container, configured in config/services.yaml.
 7) Automated tests proving that 5 and 6 hold.
 
-
-Tijd gespendeerd:
-- 45 minuten Part 1: code Review
-- 15 minuten Docker installeren en configureren (extra)
-- 30 minuten Docker installatie maken voor project
-
-Notities:
-- Wat hulp ingeschakeld van Claude om een Docker setup te maken (zelf geen ervaring mee)
